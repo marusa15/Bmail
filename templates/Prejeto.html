@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Seznam poslanih sporocil</h1>
+
+    {% for sporocilo in seznam_prejeto %}
+
+        <p>Od: {{ sporocilo.Posiljatelj }}, Za: {{ sporocilo.Naslovnik }}, {{ sporocilo.Message }}, {{ sporocilo.nastanek }}</p>
+
+    {% endfor %}
+</body>
+</html>

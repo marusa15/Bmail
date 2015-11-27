@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SmartNinja basic Jinja template</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    {% if logiran %}
+
+    <h1>Pozdravljen, {{ user.nickname() }}!</h1>
+    <p>Pošljite sporočilo z najboljšim sistemom pošiljanja sporočil - B-mailom!</p>
+
+        <form method = "post" action = "vnos">
+
+            <p>Pošiljatelj</p>
+            <input name ="Posiljatelj" value="{{ user.email() }}">
+
+            <p>Prejemnik</p>
+            <input name ="Naslovnik">
+
+            <p>Sporocilo:</p>
+            <textarea name ="Message">
+                </textarea>
+            <button type="submit">Potrdi</button>
+        </form>
+
+        <p><a href="{{ logout_url }}">Odjava</a></p>
+
+    {% else %}
+        <h1>Hello, anonimna ninja</h1>
+        <p>Prosim, prijavi se:</p>
+        <p><a href="{{ login_url }}"><button type="button" class="btn btn-default">Login</button></a></p>
+    {% endif %}
+
+</body>
+</html>
